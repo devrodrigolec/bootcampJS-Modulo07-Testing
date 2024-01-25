@@ -1,31 +1,20 @@
-# Módulo 6 - Imports - Laboratorio
-Puedes utilizar como punto de partida la sandbox de JS o la sandbox de TS (te recomendamos al de TS) y subir el resultado a tu repositorio de GitHub.
-
+# Módulo 7 - Testing - Laboratorio
 ## Enunciado
-¿Te acuerdas de la práctica de condicionales? En ella, implementamos el juego de cartas de las siete y media. ¿Qué te parece si hacemos una limpia 😀?
+En laboratorios anteriores creamos el juego de la siete y media, luego refactorizamos el código y en este laboratorio vamos a realizar pruebas unitarias para comprobar que el juego funciona correctamente.
 
-En esta práctica vamos a refactorizar el código para que sea más mantenible y reutilizable, siguiendo los mismos principios que aplicamos en este módulo.
+Para ambos ejercicios recomendamos usar el sandbox de Typescript
 
 ## Apartados obligatorios
-Te recomendamos que arranques la aplicación con el sandbox de TypeScript.
+Vamos a realizar pruebas unitarias para comprobar si un jugador ha ganado el juego o no.
 
-### Modelo
-Extrae la parte que define el modelo de datos a un fichero model.ts y haz limpia en main.ts.
+Para ello,
 
-Asegúrate que sigue todo funcionando y no salen errores por consola.
-
-### Motor
-Extrae la parte que define las reglas a un fichero motor.ts y haz limpia en main.ts.
-
-Asegúrate que sigue todo funcionando y no salen errores por consola.
-
-### UI
-Extrae la parte que define el UI a un fichero ui.ts y haz limpia en main.ts.
-
-Asegúrate que sigue todo funcionando y no salen errores por consola.
-
+- Identifica las funciones y componentes que determinan si un jugador ha ganado la partida o no.
+- Crea una serie de tests utilizando la librería de testing vitest para comprobar que el juego funciona correctamente.
+- Importa los módulos que fuesen necesarios para poder realizar las pruebas unitarias.
 ## Apartados opcionales
-### Objeto partida
-¿Te animas a crear un objeto partida y su método de ayuda para crear una partida?
+Para seguir practicando vamos a añadir dos casos más:
 
-Asegúrate que sigue todo funcionando y no salen errores por consola.
+1. Habrás tenido que generar una función que genere un número aleatorio entre 0 y 10 y en el caso de que este número sea mayor que 7, sume 2 al resultado final. Para asegurarnos de que la función se comporta como se espera, se van a realizar sus pruebas unitarias correspondientes.
+
+2. En el caso de que el jugador haya obtenido una carta, debemos de haber creado una función que devuelva el valor de esa carta. Al igual que en el caso anterior, se van a realizar pruebas unitarias para comprobar que la función se comporta como se espera en diferentes situaciones.
