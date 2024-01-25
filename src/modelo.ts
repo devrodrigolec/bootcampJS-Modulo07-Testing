@@ -6,4 +6,4 @@ export const partida : Partida = {
   puntuacionJugador : 0
 }
 
-export type Estado = 'HA_GANADO' | 'HA_PERDIDO' | undefined;
+export type Estado = 'HA_GANADO' | 'HA_PERDIDO' | 'SIGUE_JUGANDO';

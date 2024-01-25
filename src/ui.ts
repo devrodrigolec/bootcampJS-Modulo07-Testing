@@ -6,7 +6,7 @@ import {
   formatearURLDeCarta,
   mensajeHasGanado,
   obtenerMensajeDeMePlanto,
-  obtenerNumerodeCarta,
+  obtenerNumeroDeCarta,
   obtenerNumeroRandom,
   obtenerPuntuacionJugador,
   reiniciarPuntosJugador,
@@ -141,7 +141,7 @@ export const gestionarPartida = (estado : Estado): void => {
     MostrarGameOver();
   }
 
-  if(estado === undefined) return;
+  if(estado === 'SIGUE_JUGANDO') return;
 };
 
 const mostrarMensajeAJugador = (mensaje: string): void => {
@@ -152,7 +152,7 @@ const mostrarMensajeAJugador = (mensaje: string): void => {
 
 export const pedirCarta = (): void => {
   const numeroRandom: number = obtenerNumeroRandom();
-  const carta: number = obtenerNumerodeCarta(numeroRandom);
+  const carta: number = obtenerNumeroDeCarta(numeroRandom);
   const puntuacion = calcularPuntuacion(carta);
   const puntuacionSumada = sumarPuntuacionJugador(puntuacion);
   asignarPuntuacionJugador(puntuacionSumada);
@@ -172,7 +172,7 @@ export const mePlanto = (): void => {
 
 export const siHubierasSeguido = (): void => {
   const numeroRandom: number = obtenerNumeroRandom();
-  const carta: number = obtenerNumerodeCarta(numeroRandom);
+  const carta: number = obtenerNumeroDeCarta(numeroRandom);
   if (siHubieraSeguidoDiv && siHubieraSeguidoDiv instanceof HTMLDivElement) {
     mostrarCarta(carta, siHubieraSeguidoDiv);
   }

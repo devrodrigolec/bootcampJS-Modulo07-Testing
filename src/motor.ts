@@ -4,7 +4,7 @@ export const obtenerNumeroRandom = (): number => {
   return Math.ceil(Math.random() * 10);
 };
 
-export const obtenerNumerodeCarta = (numeroRandom: number): number => {
+export const obtenerNumeroDeCarta = (numeroRandom: number): number => {
   return numeroRandom > 7 ? numeroRandom + 2 : numeroRandom;
 };
 
@@ -82,20 +82,17 @@ export const obtenerMensajeDeMePlanto = (puntuacionJugador: number): string => {
   return mensaje;
 };
 
-export const reiniciarPuntosJugador = () : void=> {
+export const reiniciarPuntosJugador = (): void => {
   partida.puntuacionJugador = 0;
-}
+};
 
-export const obtenerPuntuacionJugador = () : number => {
+export const obtenerPuntuacionJugador = (): number => {
   return partida.puntuacionJugador;
-}
+};
 
-export const comprobarPartida = () : Estado => {
-  if(obtenerPuntuacionJugador() === 7.5) {
-    return 'HA_GANADO'
+export const comprobarPartida = (): Estado => {
+  if (obtenerPuntuacionJugador() === 7.5) {
+    return "HA_GANADO";
   }
-  if(obtenerPuntuacionJugador() > 7.5) {
-    return 'HA_PERDIDO'
-  }
-  return undefined
-}
+  return obtenerPuntuacionJugador() > 7.5 ? "HA_PERDIDO" : "SIGUE_JUGANDO"; 
+};
