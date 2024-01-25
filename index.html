@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <div id="puntuacion-jugador" class="puntuacion-jugador"></div>
+      <section class="mesa">       
+          <img
+            class="carta"
+            src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg"
+            alt="Carta Boca Abajo"
+            />
+            <div id="cartas-jugador" class="cartas-jugador"></div>
+            <div class="si-hubieras-seguido" id="si-hubieras-seguido"></div>
+      </section>
+      <div class="botones">
+        <button id="pedir-carta">Pedir Carta</button>
+        <button id="me-planto">Me planto</button>
+        <button id="reiniciar">Reiniciar Juego</button>
+        <button id="si-hubieras-seguido-boton" disabled>Si hubieras seguido...</button>
+      </div>
+      <div id="mensaje-juego" class="mensaje-juego"></div>
+      <div id="game-over" class="game-over hidden">
+        <div>
+          <h2>Game Over</h2>
+          <button id="reiniciar-game-over">Reiniciar Juego</button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
