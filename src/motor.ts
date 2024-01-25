@@ -1,4 +1,4 @@
-import { partida } from "./modelo";
+import { Estado, partida } from "./modelo";
 
 export const obtenerNumeroRandom = (): number => {
   return Math.ceil(Math.random() * 10);
@@ -82,10 +82,20 @@ export const obtenerMensajeDeMePlanto = (puntuacionJugador: number): string => {
   return mensaje;
 };
 
-export const reiniciarPuntosJugador = () => {
+export const reiniciarPuntosJugador = () : void=> {
   partida.puntuacionJugador = 0;
 }
 
-export const obtenerPuntuacionJugador = () => {
+export const obtenerPuntuacionJugador = () : number => {
   return partida.puntuacionJugador;
+}
+
+export const comprobarPartida = () : Estado => {
+  if(obtenerPuntuacionJugador() === 7.5) {
+    return 'HA_GANADO'
+  }
+  if(obtenerPuntuacionJugador() > 7.5) {
+    return 'HA_PERDIDO'
+  }
+  return undefined
 }

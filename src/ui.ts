@@ -1,6 +1,8 @@
+import { Estado } from "./modelo";
 import {
   asignarPuntuacionJugador,
   calcularPuntuacion,
+  comprobarPartida,
   formatearURLDeCarta,
   mensajeHasGanado,
   obtenerMensajeDeMePlanto,
@@ -122,8 +124,10 @@ export const reiniciarJuego = (): void => {
   }
 };
 
-export const comprobarPartida = (): void => {
-  if (obtenerPuntuacionJugador() === 7.5) {
+
+
+export const gestionarPartida = (estado : Estado): void => {
+  if (estado === 'HA_GANADO') {
     const mensajeAJugador: string = mensajeHasGanado();
     mostrarMensajeAJugador(mensajeAJugador);
     if (pedirCartaBoton && pedirCartaBoton instanceof HTMLButtonElement) {
@@ -133,9 +137,11 @@ export const comprobarPartida = (): void => {
       desactivarBoton(mePlantoBoton);
     }
   }
-  if (obtenerPuntuacionJugador() > 7.5) {
+  if (estado === 'HA_PERDIDO') {
     MostrarGameOver();
   }
+
+  if(estado === undefined) return;
 };
 
 const mostrarMensajeAJugador = (mensaje: string): void => {
@@ -154,7 +160,8 @@ export const pedirCarta = (): void => {
   if (cartasJugadorDiv && cartasJugadorDiv instanceof HTMLDivElement) {
     mostrarCarta(carta, cartasJugadorDiv);
   }
-  comprobarPartida();
+  const estadoPartida = comprobarPartida()
+  gestionarPartida(estadoPartida);
 };
 
 export const mePlanto = (): void => {
